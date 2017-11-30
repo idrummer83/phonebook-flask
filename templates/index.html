@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phonebook</title>
+</head>
+<body>
+    <h1>welcome to phonebook</h1>
+
+    {% block content %}
+        <a href="/create">create item</a>
+        <ul>
+            {% for a in all %}
+            <li>
+                <form action="" method="post">
+                    <input type="submit" name="update" value="update">
+                    <input type="submit" name="delete" value="delete">
+                    <br>
+
+                    <input type="text" name="newname" value="{{a.name}}">
+                    <input type="text" name="newphone" value="{{a.phone}}">
+
+                    <input type="text" name="name" value="{{a.name}}" hidden>
+                    <input type="text" name="phone" value="{{a.phone}}" hidden>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+
+</body>
+</html>
